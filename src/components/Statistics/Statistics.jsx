@@ -8,7 +8,6 @@ export const Statistics = ({
 }) => {
   return (
     <>
-      <h2 className={css.stat__title}> Statistics</h2>
       <ul className={css.stat__list}>
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>

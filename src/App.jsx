@@ -31,22 +31,25 @@ export class App extends Component {
   render() {
     const options = Object.keys(this.state);
     return (
-      <Section title="Please leave feedback">
-        <FeedbackOptions
-          options={options}
-          onLeaveFeedback={this.handleLeaveFeedback}
-        />
-
-        {this.totalStat() ? (
-          <Statistics
-            statistic={this.state}
-            total={this.totalStat()}
-            positive={this.positivePercent()}
+      <>
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={options}
+            onLeaveFeedback={this.handleLeaveFeedback}
           />
-        ) : (
-          <Notification message="No feedback yet, you can be the first one :)" />
-        )}
-      </Section>
+        </Section>
+        <Section title="Statistics">
+          {this.totalStat() ? (
+            <Statistics
+              statistic={this.state}
+              total={this.totalStat()}
+              positive={this.positivePercent()}
+            />
+          ) : (
+            <Notification message="No feedback yet, you can be the first one :)" />
+          )}
+        </Section>
+      </>
     );
   }
 }
