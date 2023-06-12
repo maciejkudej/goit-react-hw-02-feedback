@@ -32,7 +32,10 @@ export class App extends Component {
     const options = Object.keys(this.state);
     return (
       <Section title="Please leave feedback">
-        <FeedbackOptions options={options} addOne={this.handleLeaveFeedback} />
+        <FeedbackOptions
+          options={options}
+          onLeaveFeedback={this.handleLeaveFeedback}
+        />
 
         {this.totalStat() ? (
           <Statistics

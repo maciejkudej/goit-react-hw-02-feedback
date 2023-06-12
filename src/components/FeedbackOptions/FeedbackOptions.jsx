@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.scss';
 
-export const FeedbackOptions = ({ options, addOne }) => {
-  // const keys = Object.keys(options);
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return options.map(key => {
     return (
-      <button className={css.button} key={key} onClick={addOne} name={key}>
+      <button
+        className={css.button}
+        key={key}
+        onClick={onLeaveFeedback}
+        name={key}
+      >
         {key}
       </button>
     );
@@ -14,5 +18,5 @@ export const FeedbackOptions = ({ options, addOne }) => {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.object.isRequired,
-  addOne: PropTypes.func.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
