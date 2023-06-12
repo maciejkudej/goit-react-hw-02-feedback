@@ -11,8 +11,7 @@ export class App extends Component {
     bad: 0,
   };
 
-  handleLeaveFeedback = e => {
-    const name = e.target.name;
+  handleLeaveFeedback = name => {
     this.setState(previousState => ({
       [name]: previousState[name] + 1,
     }));
