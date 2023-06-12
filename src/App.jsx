@@ -11,7 +11,7 @@ export class App extends Component {
     bad: 0,
   };
 
-  changeState = e => {
+  handleLeaveFeedback = e => {
     const name = e.target.name;
     this.setState(previousState => ({
       [name]: previousState[name] + 1,
@@ -32,7 +32,7 @@ export class App extends Component {
     const options = Object.keys(this.state);
     return (
       <Section title="Please leave feedback">
-        <FeedbackOptions options={options} addOne={this.changeState} />
+        <FeedbackOptions options={options} addOne={this.handleLeaveFeedback} />
 
         {this.totalStat() ? (
           <Statistics
