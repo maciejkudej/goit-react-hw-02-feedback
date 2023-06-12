@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.scss';
 
 export const FeedbackOptions = ({ options, addOne }) => {
-  const keys = Object.keys(options);
-  return keys.map(key => {
+  // const keys = Object.keys(options);
+  return options.map(key => {
     return (
       <button className={css.button} key={key} onClick={addOne} name={key}>
         {key}

@@ -29,9 +29,10 @@ export class App extends Component {
   };
 
   render() {
+    const options = Object.keys(this.state);
     return (
       <Section title="Please leave feedback">
-        <FeedbackOptions options={this.state} addOne={this.changeState} />
+        <FeedbackOptions options={options} addOne={this.changeState} />
 
         {this.totalStat() ? (
           <Statistics
